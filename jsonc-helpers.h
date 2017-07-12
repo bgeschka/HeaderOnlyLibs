@@ -4,6 +4,11 @@
 #include <json-c/json.h>
 #include <string.h>
 
+/*
+ * Get a value from a json object like:
+ *	json_object *thing = getJsonObjectByKey(bigobject, "nested.nextnested.inner.thing");
+ * returns NULL if nothing found or error occured
+ */
 static json_object* getJsonObjectByKey(const json_object* o, const char* key)
 {
     if (o == NULL || key == NULL)
